@@ -1,2 +1,3 @@
 # DevKit
-Contains a zip of dlls that you can use to develop a mod.
+
+Check the release tab for DevKits for versions of Bigscreen.
