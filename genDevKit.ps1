@@ -166,9 +166,6 @@ if ($rel_id -ne 0) {
   Write-Host "Release created, id: $rel_id"
 }
 
-# ConEmuPack.140905.7z
-# ConEmuSetup.140905.exe
-# ConEmu_140905_English.paf.exe
 $files | foreach {
   $a_id = FindAsset $rel_id $_
   if ($a_id -ne 0) {
@@ -177,3 +174,8 @@ $files | foreach {
     UploadAsset $rel_id $_
   }
 }
+
+Write-Host "Cleaning Up"
+Remove-Item "./toZip/" -Recurse -Force -Confirm:$false
+Remove-Item "./TempAssemblies/" -Recurse -Force -Confirm:$false
+Remove-Item "./$gameVers.zip" -Force -Confirm:$false
